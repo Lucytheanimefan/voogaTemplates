@@ -26,7 +26,7 @@ h3, .content {
 }
 .surprise .centered {
   border: 3px dashed #efefef;
-  padding: 30px 40px 40px;
+  padding: 30px 20px 20px;
 }
 .surprise p {
   font-size: 1rem;
@@ -80,7 +80,7 @@ h3, .content {
 }
 
 .text {
-  width: 5em;
+  width: 7em;
   height: 3em;
   z-index: 20;
   font-size: 4rem;
