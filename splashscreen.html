@@ -8,23 +8,64 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="splashscreen.css">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="plugins/bootstrap.min.css">
-    <link rel="stylesheet" href="plugins/c3.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <!--<link rel="stylesheet" href="css/main.css"> -->
 </head>
 
-<body id = "grid">
-
-
-
-    <script src="https://www.google-analytics.com/analytics.js"></script>
+<body>
+    <!-- Pen content -->
+    <div class="wrap">
+        <div class="deck js-scene">
+            <div class="text centered" title="VoogaSquad"></div>
+        </div>
+        <div class="surprise">
+            <div class="centered">
+                <h1>VoogaSquad Tower defense</h1>
+                <h3>Defeat the Penguin</h3>
+                <div class="content">
+                    <img src="images/penguin.jpg">
+                </div>
+                <p>Or not.</p>
+            </div>
+        </div>
+    </div>
+    <!-- /content -->
     <script src="plugins/jquery.min.js"></script>
-    <script src="plugins/c3.min.js"></script>
-    <script src="script.js"></script>
+    <script type="text/javascript">
+    // TODO: debounce scroll event
+    $(document).ready(function() {
+        var $scene = $('.js-scene');
+
+        $(window).on("mousewheel DOMMouseScroll touchmove", function(e) {
+            var scrollingDown = (function() {
+                var delta,
+                    compareEvent;
+
+                if (e.type === 'touchmove') {
+                    compareEvent = 'touchmove';
+                } else {
+                    compareEvent = 'DOMMouseScroll';
+                }
+
+                delta = e.type === compareEvent ?
+                    e.originalEvent.detail * -40 :
+                    e.originalEvent.wheelDelta;
+
+                return delta > 0 ? 0 : 1;
+            }());
+
+            if (scrollingDown) {
+                $scene.addClass('is-over');
+            } else {
+                $scene.removeClass('is-over');
+            }
+        });
+    }); //doc.ready()
+    </script>
 </body>
 
 </html>
