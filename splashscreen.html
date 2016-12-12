@@ -1,71 +1,31 @@
-<!doctype html>
-<html class="no-js" lang="">
-
+<!DOCTYPE html>
+<html >
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="stylesheet" type="text/css" href="splashscreen.css">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="plugins/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <!--<link rel="stylesheet" href="css/main.css"> -->
+  <meta charset="UTF-8">
+  <title>Text animation</title>
+  
+  
+  
+      <link rel="stylesheet" href="splashscreen.css">
+
+  
 </head>
 
 <body>
-    <!-- Pen content -->
-    <div class="wrap">
-        <div class="deck js-scene">
-            <div class="text centered" title="VoogaSquad"></div>
-        </div>
-        <div class="surprise">
-            <div class="centered">
-                <h1>VoogaSquad Tower defense</h1>
-                <h3>Defeat the Penguin</h3>
-                <div class="content">
-                    <img src="images/penguin.jpg">
-                </div>
-                <p>Or not.</p>
-            </div>
-        </div>
-    </div>
-    <!-- /content -->
-    <script src="plugins/jquery.min.js"></script>
-    <script type="text/javascript">
-    // TODO: debounce scroll event
-    $(document).ready(function() {
-        var $scene = $('.js-scene');
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<div class='content'>
+  <div class='visible'>
+    <p>
+      Vooga
+    </p>
+    <ul>
+      <li>Salad</li>
+      <li>Squad</li>
+      <li>Defeat</li>
+      <li>Penguins</li>
+    </ul>
+  </div>
+</div>
 
-        $(window).on("mousewheel DOMMouseScroll touchmove", function(e) {
-            var scrollingDown = (function() {
-                var delta,
-                    compareEvent;
-
-                if (e.type === 'touchmove') {
-                    compareEvent = 'touchmove';
-                } else {
-                    compareEvent = 'DOMMouseScroll';
-                }
-
-                delta = e.type === compareEvent ?
-                    e.originalEvent.detail * -40 :
-                    e.originalEvent.wheelDelta;
-
-                return delta > 0 ? 0 : 1;
-            }());
-
-            if (scrollingDown) {
-                $scene.addClass('is-over');
-            } else {
-                $scene.removeClass('is-over');
-            }
-        });
-    }); //doc.ready()
-    </script>
 </body>
-
 </html>
