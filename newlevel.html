@@ -1,0 +1,77 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>New Level</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/c3.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <style type="text/css">
+    body{
+        text-align: center;
+    }
+    .load-wrapp, .load-7,.spinner, .square-holder{
+        text-align: center !important;
+        display: inline-block !important;
+    } 
+
+    .square-holder{
+        margin-left: -120px;
+    }
+
+    .square {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        background-color: #4b9cdb;
+    }
+    
+    .spinner {
+        display: inline-block;
+        position: relative;
+        width: 45px;
+        height: 45px;
+        margin: 0 auto;
+    }
+
+    .load-7 .square {animation: loadingG 1.5s cubic-bezier(.17,.37,.43,.67) infinite;}
+
+    h1{
+        color: white;
+        text-align: center;
+    }
+
+    @keyframes loadingG {
+    0% {transform: translate(0,0) rotate(0deg);}
+    50% {transform: translate(100px,0) rotate(360deg);}
+    100% {transform: translate(0,0) rotate(0deg);}
+}
+    </style>
+    <!--<link rel="stylesheet" href="css/main.css"> -->
+</head>
+
+<body>
+<div>
+    <div class="load-wrapp">
+        <div class="load-7">
+            <h1>New Level</h1>
+            <div class="square-holder">
+                <div class="square"></div>
+            </div>
+        </div>
+    </div>
+    <div>
+</body>
+<script src="plugins/jquery.min.js"></script>
+<script src="plugins/c3.min.js"></script>
+<script src="script.js"></script>
+</body>
+
+</html>
